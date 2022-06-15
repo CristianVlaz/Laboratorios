@@ -1,0 +1,98 @@
+void DestruirNodo(Nodo*nodo){
+    free(nodo);
+}
+
+void InsertarPrincipio(Lista*lista,Libro*libro){
+    Nodo*nodo=CrearNodo(libro);
+    nodo->siguiente=lista->cabeza;
+    lista->cabeza=nodo;
+    lista->cantidad++;
+}
+
+
+void InsertarFinal(Lista*lista,Libro*libro){
+    Nodo*nodo=CrearNodo(libro);
+    if(lista->cabeza == NULL){
+        lista->cabeza=nodo;
+    }else{
+        Nodo*puntero=lista->cabeza;
+        while(puntero->siguiente){
+            puntero=puntero->siguiente;
+        }
+        puntero->siguiente=nodo;
+    }
+    lista->cantidad++;
+ }
+
+void InsertarDespues(int n,Lista*lista,Libro*libro){
+    Nodo*nodo=CrearNodo(libro);
+    if(lista->cabeza == NULL){
+        lista->cabeza=nodo;
+    }else{
+        Nodo*puntero=lista->cabeza;
+        int posicion=0;
+        while(posicion<n && puntero->siguiente){
+            puntero=puntero->siguiente;
+            posicion ++;
+       }
+        nodo->siguiente=puntero->siguiente;
+        puntero->siguiente=nodo;
+}
+lista->cantidad++;
+   }
+
+
+
+Libro* Obtener(int n,Lista*lista){
+    if(lista->cabeza return NULL;
+                      =NULL){
+   }else{
+       Nodo*puntero=lista->cabeza;
+        int posicion=0;
+       while(posicion<n && puntero->siguiente){
+            puntero=puntero->siguiente;
+            posicion ++;
+       }
+        if(posicion!=n){
+            return NULL;
+        }else{
+            return &puntero->libro;
+       }
+}
+   }
+
+int Contar(Lista* lista) {
+
+return lista->cantidad;
+
+}
+
+
+
+int main() {
+    char op = 'n';
+    Lista *lista=new Lista;
+    Clientes *clientes=new Clientes;
+    do {
+        cout << "Ingrese el titulo del libro: " << endl;
+        //fgets(libro->titulo, 50, stdin);
+        cin >> libro->titulo;
+        cout << "Ingrese el autor del libro: " << endl;
+        //fgets(libro->autor, 50, stdin);
+        cin >> libro->autor;
+        cout << "Ingrese el ISBN del libro: " << endl;
+        //fgets(libro->isbn,13 , stdin);
+        cin >> libro->isbn;
+
+        insertarPrincipio(lista, libro);
+        printf("%s\n", libro->titulo);
+        printf("%s\n", libro->autor);
+        printf("%s\n", libro->isbn);
+        cout << "Quiere ingresar otro libro (1 = si, 2 = no): ";
+        cin >> op;
+    } while (op == 's');
+    
+   
+
+    return 0;
+}

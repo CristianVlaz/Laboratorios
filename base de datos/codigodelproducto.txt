@@ -1,0 +1,10 @@
+Codigo  Nombre                     Precio
+
+00    Caja de puré 250 Gramos    1.890 CLP
+01    Tallarines 400 Gramos      899 CLP
+02    Arroz 1 Kilo               1.190 CLP
+03    Sal 1 Kilo                 449 CLP
+04    Azucar 1 Kilo              699 CLP
+05    Aceite 1 Litro             5.000 CLP
+06    Café 100 Gramos            3.890 CLP
+07    Té Caja de 20 Unidades     499 CLP
